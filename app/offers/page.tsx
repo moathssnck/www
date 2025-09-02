@@ -239,7 +239,7 @@ export default function OffersPage() {
       <Button
         onClick={() => setShowCart(true)}
         variant="secondary"
-        className="fixed bottom-2 left-2 px-3 z-20 lg:px-4 py-2"
+        className="fixed bottom-2 left-2 px-3 z-20 lg:px-4 py-2 bg-blue-600 text-white"
       >
         <ShoppingCart className="w-4 h-4 lg:w-5 lg:h-5" />
         {getTotalItems() > 0 && (
@@ -251,7 +251,7 @@ export default function OffersPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-500  via-blue-50/50 to-background py-8 lg:py-12">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl lg:text-4xl font-bold mb-4 text-balance bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+          <h2 className="text-2xl lg:text-4xl font-bold mb-4 text-balance bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-blue-600">
             عروض مياه أبراج الحصرية
           </h2>
           <p className="text-base lg:text-xl text-muted-foreground mb-8 text-pretty leading-relaxed max-w-2xl mx-auto">
@@ -398,7 +398,7 @@ export default function OffersPage() {
                     <Link href="/checkout">
                       <Button
                         onClick={() => setShowCart(false)}
-                        className="w-full bg-primary hover:bg-primary/90 text-white rounded-full py-3"
+                        className="w-full bg-blue-600 hover:bg-primary/90 text-white rounded-full py-3"
                       >
                         إتمام الطلب ({getTotalItems()} منتج)
                       </Button>

