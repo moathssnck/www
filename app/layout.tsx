@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "Pure Water, Pure Life",
+  description: "Experience the pristine taste of Arabiv Water - sourced from natural springs and purified to perfection for your health and wellness.",
 };
 
 export default function RootLayout({
