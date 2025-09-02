@@ -164,7 +164,7 @@ export default function AbraajWaterPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-blue-500  text-primary-foreground">
+      <section className="py-16 bg-blue-600  text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -194,7 +194,7 @@ export default function AbraajWaterPage() {
             <div className="relative w-32 h-32 mx-auto mb-8">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500  to-blue-600 rounded-3xl shadow-2xl"></div>
               <div className="absolute inset-2 bg-primary-foreground rounded-2xl flex items-center justify-center">
-                <Droplets className="w-16 h-16 text-blue-500 " />
+                <Droplets className="w-16 h-16 text-blue-100 " />
               </div>
             </div>
             <h2 className="text-4xl font-bold mb-8 text-balance">
@@ -237,7 +237,7 @@ export default function AbraajWaterPage() {
           <div className="max-w-2xl mx-auto">
             <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden aspect-video shadow-2xl">
               <img
-                src="/placeholder.svg?height=400&width=600"
+                src="/IMG_0923.PNG"
                 alt="أفضل خيار لعائلتك"
                 className="w-full h-full object-cover"
               />
@@ -326,7 +326,7 @@ export default function AbraajWaterPage() {
             <div>
               <div className="relative">
                 <img
-                  src="/placeholder.svg?height=300&width=400"
+                  src="https://www.abraajwater.com/themes/abraaj/assets/img/Delivery.png"
                   alt="خدمات التوصيل"
                   className="w-full rounded-3xl shadow-2xl"
                 />
@@ -344,7 +344,7 @@ export default function AbraajWaterPage() {
                 يعمل أسطول التوصيل المتطور لدينا بنية (6) أيام في الأسبوع،
                 ويمكننا توصيل المياه النقية إلى منزلك أو مكتبك بأسرع وقت ممكن.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-4 text-white">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
                   <span>توصيل مجاني للطلبات أكثر من 50 ريال</span>
@@ -367,7 +367,7 @@ export default function AbraajWaterPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-blue-500  text-primary-foreground">
+      <section className="py-20 bg-blue-500  text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">تواصل معنا</h2>

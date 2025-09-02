@@ -560,6 +560,9 @@ export default function CheckoutPage() {
                 البطاقة
               </p>
             </div>
+            <div className="flex justify-center">
+              <img src="/aas.png" alt="pm" width={120}/>
+            </div>
           </div>
         );
 
