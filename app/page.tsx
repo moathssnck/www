@@ -60,7 +60,7 @@ export default function AbraajWaterPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-white text-primary-foreground shadow-lg">
+      <header className="bg-white text-blue-500 shadow-lg">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -88,7 +88,7 @@ export default function AbraajWaterPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/5 via-blue-50/50 to-background py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-500 /5 via-blue-50/50 to-background py-20 overflow-hidden">
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] opacity-30"></div>
 
         <div className="container mx-auto px-4 text-center relative">
@@ -115,7 +115,7 @@ export default function AbraajWaterPage() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-balance bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold mb-6 text-balance bg-gradient-to-r from-blue-500  to-blue-600 bg-clip-text text-transparent">
               تطبيق مياه أبراج الجديد
             </h2>
             <p className="text-md text-muted-foreground mb-8 text-pretty leading-relaxed">
@@ -164,7 +164,7 @@ export default function AbraajWaterPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-16 bg-blue-500  text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -192,9 +192,9 @@ export default function AbraajWaterPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="relative w-32 h-32 mx-auto mb-8">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary to-blue-600 rounded-3xl shadow-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500  to-blue-600 rounded-3xl shadow-2xl"></div>
               <div className="absolute inset-2 bg-primary-foreground rounded-2xl flex items-center justify-center">
-                <Droplets className="w-16 h-16 text-primary" />
+                <Droplets className="w-16 h-16 text-blue-500 " />
               </div>
             </div>
             <h2 className="text-4xl font-bold mb-8 text-balance">
@@ -244,7 +244,7 @@ export default function AbraajWaterPage() {
               <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
                 <Button
                   size="lg"
-                  className="rounded-full w-20 h-20 bg-white/90 hover:bg-white text-primary shadow-2xl hover:scale-110 transition-all duration-300"
+                  className="rounded-full w-20 h-20 bg-white/90 hover:bg-white text-blue-500  shadow-2xl hover:scale-110 transition-all duration-300"
                 >
                   <Play className="w-8 h-8 ml-1" />
                 </Button>
@@ -273,7 +273,7 @@ export default function AbraajWaterPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-white to-blue-50">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500  to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <Truck className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">توصيل سريع</h3>
@@ -367,7 +367,7 @@ export default function AbraajWaterPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-20 bg-blue-500  text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">تواصل معنا</h2>
@@ -380,7 +380,7 @@ export default function AbraajWaterPage() {
             <Card className="bg-primary-foreground/10 border-primary-foreground/20 backdrop-blur-sm">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary-foreground rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-6 h-6 text-primary" />
+                  <Phone className="w-6 h-6 text-blue-500 " />
                 </div>
                 <h3 className="font-bold mb-2">الاتصال المجاني</h3>
                 <p className="text-2xl font-bold">1844666</p>
@@ -390,7 +390,7 @@ export default function AbraajWaterPage() {
             <Card className="bg-primary-foreground/10 border-primary-foreground/20 backdrop-blur-sm">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary-foreground rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-6 h-6 text-primary" />
+                  <Clock className="w-6 h-6 text--blue-500 s" />
                 </div>
                 <h3 className="font-bold mb-2">ساعات العمل</h3>
                 <p>07:00 - 16:00</p>
@@ -400,7 +400,7 @@ export default function AbraajWaterPage() {
             <Card className="bg-primary-foreground/10 border-primary-foreground/20 backdrop-blur-sm">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary-foreground rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-6 h-6 text-primary" />
+                  <MapPin className="w-6 h-6 text-blue-500 " />
                 </div>
                 <h3 className="font-bold mb-2">أيام العمل</h3>
                 <p>السبت - الخميس</p>
@@ -410,7 +410,7 @@ export default function AbraajWaterPage() {
             <Card className="bg-primary-foreground/10 border-primary-foreground/20 backdrop-blur-sm">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary-foreground rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-6 h-6 text-primary" />
+                  <Mail className="w-6 h-6 text-blue-500 " />
                 </div>
                 <h3 className="font-bold mb-2">البريد الإلكتروني</h3>
                 <p className="text-sm">info@abraajwater.com</p>
@@ -483,7 +483,7 @@ export default function AbraajWaterPage() {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <Droplets className="w-10 h-10 text-primary" />
+              <Droplets className="w-10 h-10 text-blue-500 " />
               <div>
                 <h3 className="text-2xl font-bold">أبراج</h3>
                 <p className="text-sm opacity-70">مياه أبراج المعتمدة</p>

@@ -249,7 +249,7 @@ export default function OffersPage() {
         )}
       </Button>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 via-blue-50/50 to-background py-8 lg:py-12">
+      <section className="bg-gradient-to-br from-blue-500  via-blue-50/50 to-background py-8 lg:py-12">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl lg:text-4xl font-bold mb-4 text-balance bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
             عروض مياه أبراج الحصرية
@@ -268,10 +268,10 @@ export default function OffersPage() {
             <div key={category.id} className="mb-12 lg:mb-16">
               {/* Category Header */}
               <div className="text-center mb-8 lg:mb-12">
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-primary">
+                <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-blue-500 ">
                   {category.category}
                 </h3>
-                <div className="w-16 lg:w-24 h-1 bg-gradient-to-r from-primary to-blue-600 mx-auto rounded-full"></div>
+                <div className="w-16 lg:w-24 h-1 bg-gradient-to-r from-blue-500  to-blue-600 mx-auto rounded-full"></div>
               </div>
 
               {/* Products Grid */}
@@ -309,13 +309,13 @@ export default function OffersPage() {
                       )}
 
                       <div className="flex items-center justify-between">
-                        <div className="text-lg lg:text-2xl font-bold text-primary">
+                        <div className="text-lg lg:text-2xl font-bold text-blue-500 ">
                           {item.price}
                         </div>
                         <Button
                           onClick={() => addToCart(item, category.id, index)}
                           size="sm"
-                          className="bg-primary hover:bg-primary/90 text-white rounded-full px-3 lg:px-6 shadow-lg hover:shadow-xl transition-all duration-300 text-xs lg:text-sm"
+                          className="bg-blue-500  hover:bg-primary/90 text-white rounded-full px-3 lg:px-6 shadow-lg hover:shadow-xl transition-all duration-300 text-xs lg:text-sm"
                         >
                           <ShoppingCart className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2" />
                           أضف للسلة
