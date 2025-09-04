@@ -239,9 +239,9 @@ export default function OffersPage() {
       <Button
         onClick={() => setShowCart(true)}
         variant="secondary"
-        className="fixed bottom-3 left-3 px-3 z-20 lg:px-4 py-2 bg-blue-600 text-white h-10 w-10 rounded-full"
+        className="fixed bottom-3 left-3 px-3 z-20 lg:px-4 py-2 bg-blue-600 text-white h-14 w-14 rounded-full"
       >
-        <ShoppingCart className="w-5 h-5 lg:w-5 lg:h-5" />
+        <ShoppingCart className="w-6 h-6 lg:w-5 lg:h-5" />
         {getTotalItems() > 0 && (
           <Badge className="absolute -top-2 -right-2 bg-red-500 text-white text-xs min-w-[20px] h-5 flex items-center justify-center rounded-full">
             {getTotalItems()}
